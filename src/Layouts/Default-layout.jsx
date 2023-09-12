@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 
 const Defaultlayout =
@@ -7,7 +6,6 @@ const Defaultlayout =
   (...props) => {
     return (
       <div>
-        <NavBar />
         <Component {...props} />
         <Footer />
       </div>
