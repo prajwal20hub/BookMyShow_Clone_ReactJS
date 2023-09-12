@@ -2,13 +2,15 @@ import { createStore,combineReducers } from "redux";
 import { MovieReducer } from "../Redux/reducer";
 import { cityreducer } from "./city/reducer";
 import { productreducer } from "./product/reducer";
+import {bookingReducer} from "./booking/reducer.jsx"
 
 import { tokenreducer } from "./tokenkey/reducer";
 const rootreducer=combineReducers({
 city:cityreducer,
 token:tokenreducer,
 movie: MovieReducer,
-product:productreducer
+product:productreducer,
+booking: bookingReducer,
 })
 
 

@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Home-Page";
 import MoviePage from "./Pages/Movie-Page";
 import Plays from "./Pages/Plays";
+import BookingForm from "./Components/BookingForm";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 axios.defaults.params = {};
@@ -19,6 +20,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/movie/:id" element={<MoviePage />} />
       <Route path="/plays" element={<Plays />} />
+      <Route path="/booking" element={<BookingForm />} />
     </Routes>
   );
 }

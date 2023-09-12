@@ -4,6 +4,7 @@ import { MovieDetails } from "../components/MovieDetails"
 import { Offers } from "../components/Offers/Offers"
 
 
+
 import { Payment } from "../components/payment"
 export const Router=()=>{
     return(
@@ -12,6 +13,7 @@ export const Router=()=>{
     < Route path="/movies/:id" element={<MovieDetails/>}/>
     < Route path="/payment/:id" element={<Payment/>}/>
     < Route path="/offers" element={<Offers />}/>
+    
    
 </Routes>
 

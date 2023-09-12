@@ -13,14 +13,10 @@ const MovieProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [price, setPrice] = useState(0);
 
-  const rentMovie = () => {
-    setIsOpen(true);
-    setPrice(149);
-  };
 
-  const buyMovie = () => {
+  const buyTickets = () => {
     setIsOpen(true);
-    setPrice(599);
+    setPrice(399);
   };
   return (
     <MovieContext.Provider
@@ -31,8 +27,7 @@ const MovieProvider = ({ children }) => {
         setIsOpen,
         price,
         setPrice,
-        rentMovie,
-        buyMovie,
+        buyTickets,
       }}
     >
       {children}
