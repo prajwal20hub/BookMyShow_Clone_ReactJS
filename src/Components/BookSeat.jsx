@@ -29,35 +29,36 @@ export default function Bookticket(props) {
   function buttonclick(){
     Swal.fire("booked succesfully");
   }
-//   const navigate = useNavigate();
-//   let tl = gsap.timeline({ ease: "power1.in" });
-//   let clicked = false;
+  const navigate = useNavigate();
+  let tl = gsap.timeline({ ease: "power1.in" });
+  let clicked = false;
 
-//   function buttonanimation(e2) {
-//     if (clicked === false && count !== 0) {
-//       clicked = true;
-//       e2.target.innerText = "";
-//       tl.to("#button", { width: "50px", duration: 0.5 });
-//       tl.to(ref, { y: "0%", duration: 0.5 });
-//       console.log(e2);
-//       setTimeout(() => {
-//         // navigate("/");
-//       }, 3000);
-//     }
-    // let data = {
-    //   MovieName: props.name,
-    //   Price: Price,
-    //   "count ": count,
-    // };
-//     let fetchoption = {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(data),
-//     };
+  function buttonanimation(e2) {
+    if (clicked === false && count !== 0) {
+      clicked = true;
+      e2.target.innerText = "";
+      tl.to("#button", { width: "50px", duration: 0.5 });
+      tl.to(ref, { y: "0%", duration: 0.5 });
+      console.log(e2);
+      setTimeout(() => {
+        // navigate("/");
+      }, 3000);
+    }
+    let data = {
+      MovieName: props.name,
+      Price: Price,
+      "count ": count,
+    };
+    // console.log(data)  
+    let fetchoption = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    };
 
-//     fetch(`https://book-my-show-back-end.onrender.com/booking${props.name}`, fetchoption);
-//   }
-
+    fetch(`https://book-my-show-back-end.onrender.com/booking${props.name}`, fetchoption);
+   
+  }
   return (
     <body1>
       <ul className="showcase">
