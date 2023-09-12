@@ -19,7 +19,6 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/movie/:id" element={<MoviePage />} />
       <Route path="/plays" element={<Plays />} />
-      <Route path ="/book" element={<BookSeat/>}/>
     </Routes>
   );
 }
