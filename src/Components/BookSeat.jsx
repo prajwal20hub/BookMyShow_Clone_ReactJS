@@ -1,13 +1,16 @@
 import "./bookticket.css";
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef,useContext } from "react";
 import Image1 from "../Image/screen.png";
+import { MovieContext } from "../Context/MovieContext";
 import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
+import PaymentModel from "./PaymentModel";
 import Swal from 'sweetalert2';
 
 
 export default function Bookticket(props) {
+  const { price, setIsOpen, isOpen, buyTickets } = useContext(MovieContext);
   const ref = useRef(null);
   console.log(ref);
   const [count, setCount] = useState(0);
@@ -26,9 +29,9 @@ export default function Bookticket(props) {
     }
   }
 
-  function buttonclick(){
-    Swal.fire("booked succesfully");
-  }
+  // function buttonclick(){
+  //   Swal.fire("booked succesfully");
+  // }
   const navigate = useNavigate();
   let tl = gsap.timeline({ ease: "power1.in" });
   let clicked = false;
@@ -61,6 +64,7 @@ export default function Bookticket(props) {
   }
   return (
     <body1>
+      <PaymentModel setIsOpen={setIsOpen} isOpen={isOpen} price={price} />
       <ul className="showcase">
         <li>
           <div className="seat selected"></div>
@@ -159,7 +163,7 @@ export default function Bookticket(props) {
             </p>
             <body2>
               {" "}
-              <div onClick={buttonclick} id="button">
+              <div onClick={buyTickets} id="button">
                 <span id="text">Book</span>
                 <span ref={ref} id="w">
                   ✓
