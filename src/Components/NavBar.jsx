@@ -27,7 +27,6 @@ function NavLg() {
       ...collectdata,
       [id]: value,
     })
-
   };
 
   const dispatch = useDispatch()

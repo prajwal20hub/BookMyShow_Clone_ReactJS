@@ -49,6 +49,7 @@ const AuthForm = () => {
           localStorage.token = uniqid();
           Swal.fire("Congrats", "You have Login Successfully.", "success");
           navigate('/');
+          window.location.href = '/';
         })
         .catch((err)=> {
           console.log(err);
