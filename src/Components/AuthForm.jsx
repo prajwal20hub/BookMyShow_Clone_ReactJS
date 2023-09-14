@@ -37,7 +37,7 @@ const AuthForm = () => {
     e.preventDefault();
     // onSubmit({ inputs, signup: isSignup });
     if(!isSignup){
-      axios.post('signup_API_link',inputs)
+      axios.post('https://localhost:7005/api/Users',inputs)
         .then((res)=> {
           setIsSignup(!isSignup);
         })
@@ -53,6 +53,7 @@ const AuthForm = () => {
         })
         .catch((err)=> {
           console.log(err);
+          navigate('/');
           Swal.fire("Oops!", "Invalid Credentials!", "error");
         })
     }
