@@ -12,6 +12,7 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { Link, useNavigate } from "react-router-dom";
 import uniqid from 'uniqid'
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const labelStyle = { mt: 1, mb: 1 };
 const AuthForm = () => {
@@ -23,6 +24,8 @@ const AuthForm = () => {
     password: "",
   });
   const [isSignup, setIsSignup] = useState(false);            // means user not sign up initially 
+
+  const {name, email, password } = inputs;
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -40,10 +43,16 @@ const AuthForm = () => {
         })
     }
     else{
-      axios.post('login_API_link',inputs)
+      axios.post('https://localhost:7005/api/Users/login',{'email':email,'password':password})
         .then((res)=> {
-          localStorage.token = res.data.token;
+          console.log(res);
+          localStorage.token = uniqid();
+          Swal.fire("Congrats", "You have Login Successfully.", "success");
           navigate('/');
+        })
+        .catch((err)=> {
+          console.log(err);
+          Swal.fire("Oops!", "Invalid Credentials!", "error");
         })
     }
   };
